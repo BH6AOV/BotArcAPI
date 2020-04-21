@@ -1,0 +1,27 @@
+# Docker compose file for BotArcAPI
+
+version: '3'
+
+services:
+  botarcapi:
+    build: .
+    restart: always
+    container_name: 'botarcapi'
+    environment:
+
+      # modify this will
+      # overriding default configs
+      BOTARCAPI_CONFIG: |
+        {
+          "SERVER_PORT": 80
+          "BOTARCAPI_VERSTR": "v1.0.0",
+          "ARCAPI_VERSION": 11,
+          "ARCAPI_APPVERSION": "2.6.1c",
+          "ARCAPI_USERAGENT": "Grievous Lady (Linux; U; Android 2.3.3; BotArcAPI)",
+          "LOG_LEVEL": 0
+        }
+
+    # expose service port
+    # to localhost at 8000
+    ports:
+      - '8000:80'

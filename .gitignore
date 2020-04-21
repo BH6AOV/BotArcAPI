@@ -1,0 +1,9 @@
+# node modules
+[Nn]ode_modules/
+
+# database files
+[Ss]avedata/
+*.db
+
+# logs
+[Ss]avelogs/
